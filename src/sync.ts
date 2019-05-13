@@ -1,7 +1,7 @@
 import { IKeyValueStoreSync } from "@keeveestore/keeveestore";
 
 export class StoreSync<K, T> implements IKeyValueStoreSync<K, T> {
-	private constructor(private readonly store: Map<K, T>, private maxSize: number) {
+	private constructor(private store: Map<K, T>, private maxSize: number) {
 		this.resize(maxSize);
 	}
 

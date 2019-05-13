@@ -4,7 +4,7 @@ import { StoreSync } from "../src";
 
 describe("Capped Map", () => {
 	it("should set and get an entry", () => {
-		const store = new StoreSync<string, number>(100);
+		const store = StoreSync.new<string, number>(100);
 		store.put("foo", 1);
 		store.put("bar", 2);
 
@@ -13,7 +13,7 @@ describe("Capped Map", () => {
 	});
 
 	it("should get an entry", () => {
-		const store = new StoreSync<string, number>(2);
+		const store = StoreSync.new<string, number>(2);
 		store.put("1", 1);
 		store.put("2", 2);
 
@@ -28,7 +28,7 @@ describe("Capped Map", () => {
 	});
 
 	it("should set entries and remove ones that exceed the maximum size", () => {
-		const store = new StoreSync<string, number>(2);
+		const store = StoreSync.new<string, number>(2);
 		store.put("foo", 1);
 		store.put("bar", 2);
 
@@ -46,7 +46,7 @@ describe("Capped Map", () => {
 	});
 
 	it("should update an entry", () => {
-		const store = new StoreSync<string, number>(100);
+		const store = StoreSync.new<string, number>(100);
 		store.put("foo", 1);
 
 		expect(store.get("foo")).toBe(1);
@@ -58,14 +58,14 @@ describe("Capped Map", () => {
 	});
 
 	it("should return if an entry exists", () => {
-		const store = new StoreSync<string, number>(100);
+		const store = StoreSync.new<string, number>(100);
 		store.put("1", 1);
 
 		expect(store.has("1")).toBeTrue();
 	});
 
 	it("should remove the specified entrys", () => {
-		const store = new StoreSync<string, number>(100);
+		const store = StoreSync.new<string, number>(100);
 		store.put("1", 1);
 		store.put("2", 2);
 
@@ -77,7 +77,7 @@ describe("Capped Map", () => {
 	});
 
 	it("should remove the specified entrys", () => {
-		const store = new StoreSync<string, number>(2);
+		const store = StoreSync.new<string, number>(2);
 		store.put("1", 1);
 		store.put("2", 2);
 
@@ -92,7 +92,7 @@ describe("Capped Map", () => {
 	});
 
 	it("should remove all entrys", () => {
-		const store = new StoreSync<string, number>(3);
+		const store = StoreSync.new<string, number>(3);
 		store.put("1", 1);
 		store.put("2", 2);
 		store.put("3", 3);
@@ -105,7 +105,7 @@ describe("Capped Map", () => {
 	});
 
 	it("should return the keys", () => {
-		const store = new StoreSync<string, number>(3);
+		const store = StoreSync.new<string, number>(3);
 		store.put("1", 1);
 		store.put("2", 2);
 		store.put("3", 3);
@@ -114,7 +114,7 @@ describe("Capped Map", () => {
 	});
 
 	it("should return the values", () => {
-		const store = new StoreSync<string, number>(3);
+		const store = StoreSync.new<string, number>(3);
 		store.put("1", 1);
 		store.put("2", 2);
 		store.put("3", 3);
@@ -123,7 +123,7 @@ describe("Capped Map", () => {
 	});
 
 	it("should return the entry count", () => {
-		const store = new StoreSync<string, number>(100);
+		const store = StoreSync.new<string, number>(100);
 		store.put("1", 1);
 		store.put("2", 2);
 
@@ -139,7 +139,7 @@ describe("Capped Map", () => {
 	});
 
 	it("should resize the map", () => {
-		const store = new StoreSync<string, number>(3);
+		const store = StoreSync.new<string, number>(3);
 		store.put("1", 1);
 		store.put("2", 2);
 		store.put("3", 3);
